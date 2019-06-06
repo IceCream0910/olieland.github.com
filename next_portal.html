@@ -16,7 +16,7 @@
     <form onsubmit="return search_onClick()">
         <div class="search">
 
-            <input type="text" id="input" class="searchTerm" placeholder=" 검색어를 입력하세요">
+            <input type="text" id="input" class="searchTerm" placeholder=" 검색어나 URL을 입력하세요">
             <button type="submit" class="searchButton">
              <i class="fa fa-search"></i>
           </button>
@@ -28,10 +28,28 @@
 <script>
     function search_onClick() {
         var input = document.getElementById("input").value;
+        var urlBoolean1 = input.includes('http://');
+        var urlBoolean2 = input.includes('https://');
+        var urlBoolean3 = input.includes('.co');
         if (input == 'tester_요한') {
             alert("요한아 안녕!! ㅋㅋ");
+        } else if (urlBoolean1 == true || urlBoolean2 == true || urlBoolean3 == true) {
+            window.open(input);
+
+        } else if (input == "") {
+            document.getElementById("input").focus();
+            $('input:input').attr('placeholder', ' 검색어가 입력되지 않았습니다');
+            document.getElementsByTagName('input')[0].style.border = "1px solid #ff0000";
+
+            setTimeout(function() {
+                $('input:input').attr('placeholder', ' 검색어나 URL을 입력하세요');
+                document.getElementsByTagName('input')[0].style.border = "1px solid #3EAF0E";
+            }, 2500);
+
+        } else {
+            window.open("https://google.com/search?q= " + input);
         }
-        window.open("https://google.com/search?q=" + input, "_self");
+
         return false; //do not submit the form
     }
 </script>
@@ -61,10 +79,9 @@
     </div>
 </body>
 <div class="navbar">
-    <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a style="weight:100%"></a>
-    <a href="#contact" style="font-size:5px; vertical-align:text-bottom; text-align: right;">ⓒ All reserved Copyright Ice Cream</a>
+    <a href="#home" class="active">메인</a>
+    <a href="#news">콘텐츠</a>
+
 </div>
 
 <style>
@@ -208,7 +225,6 @@
                 step((index + 1) % count);
             });
         }
-
         step(1);
     });
 </script>
