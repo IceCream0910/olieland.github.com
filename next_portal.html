@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+    <title>Next - 정보를 탐험하다</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<br>
+<Br>
+<br>
+<h2 style="color:#000; margin: 15px; text-align: center;"><img weight="300" height="150" src="https://whal.eu/i/V7kD2BnA"></h2>
+
+<div class="wrap">
+    <form onsubmit="return search_onClick()">
+        <div class="search">
+
+            <input type="text" id="input" class="searchTerm" placeholder=" 검색어를 입력하세요">
+            <button type="submit" class="searchButton">
+             <i class="fa fa-search"></i>
+          </button>
+
+        </div>
+    </form>
+</div>
+
+<script>
+    function search_onClick() {
+        var input = document.getElementById("input").value;
+        if (input == 'tester_요한') {
+            alert("요한아 안녕!! ㅋㅋ");
+        }
+        window.open("https://google.com/search?q=" + input, "_self");
+        return false; //do not submit the form
+    }
+</script>
+
+
+
+<body>
+
+    <div id="content" style="float:left;">
+        실시간 검색어
+        <dl id="rank-list">
+            <dd>
+                <ol>
+                    <li><a href="https://google.com/search?q=요한이 바보">1 요한이 바보</a></li>
+                    <li><a href="https://google.com/search?q=요한이 바보">2 태인이 바보</a></li>
+                    <li><a href="https://google.com/search?q=요한이 바보">3 호준이 바보</a></li>
+                    <li><a href="https://google.com/search?q=요한이 바보">4 산이도 바보</a></li>
+                    <li><a href="https://google.com/search?q=요한이 바보">5 원준이 바보</a></li>
+                    <li><a href="https://google.com/search?q=요한이 바보">6 실검</a></li>
+                    <li><a href="https://google.com/search?q=요한이 바보">7 실시간 검색어</a></li>
+                    <li><a href="https://google.com/search?q=요한이 바보">8 네이버 따라하기</a></li>
+                    <li><a href="https://google.com/search?q=요한이 바보">9 초록이라 그런가</a></li>
+                    <li><a href="https://google.com/search?q=요한이 바보">10 색깔 아이디어좀</a></li>
+                </ol>
+            </dd>
+        </dl>
+    </div>
+</body>
+<div class="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a style="weight:100%"></a>
+    <a href="#contact" style="font-size:5px; vertical-align:text-bottom; text-align: right;">ⓒ All reserved Copyright Ice Cream</a>
+</div>
+
+<style>
+    stylesheet.css body {
+        font-size: 12px;
+        background: #FFF;
+        color: #333;
+        margin: 0;
+    }
+    
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+    body {
+        background: #FFF;
+        font-family: 'Open Sans', sans-serif;
+        justify-content: : center;
+        align-items: center;
+    }
+    
+    .wrap {
+        margin: 8px;
+        padding: 8px;
+    }
+    
+    .search {
+        width: 100%;
+        position: relative;
+        display: flex;
+    }
+    
+    .searchTerm {
+        width: 100%;
+        border: 1px solid #3EAF0E;
+        border-right: none;
+        padding: 5px;
+        height: 35px;
+        border-radius: 8px 0 0 8px;
+        outline: none;
+        color: rgb(0, 59, 32);
+    }
+    
+    .searchTerm:focus {
+        color: #000;
+    }
+    
+    .searchButton {
+        width: 60px;
+        height: 47px;
+        border: 2px solid #3EAF0E;
+        background: #3EAF0E;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 8px 8px 0;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    /*Resize the wrap to see the search bar change!*/
+    
+    #content {
+        margin: 20px;
+        background: rgb(255, 255, 255);
+    }
+    
+    #rank-list a {
+        color: #3EAF0E;
+        text-decoration: none;
+    }
+    
+    #rank-list a:hover {
+        text-decoration: none;
+    }
+    
+    #rank-list {
+        overflow: hidden;
+        width: 160px;
+        height: 20px;
+        margin: 0;
+    }
+    
+    #rank-list dt {
+        display: none;
+    }
+    
+    #rank-list dd {
+        position: relative;
+        margin: 0;
+    }
+    
+    #rank-list ol {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    #rank-list li {
+        height: 20px;
+        line-height: 20px;
+    }
+    
+    .navbar {
+        overflow: hidden;
+        background-color: #fff;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    .navbar a {
+        float: left;
+        display: block;
+        color: #000;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    
+    .navbar a:hover {
+        background: #f6f6f6;
+        color: black;
+    }
+    
+    .navbar a.active {
+        background-color: #4CAF50;
+        border-radius: 8px 8px 0 0;
+        color: white;
+    }
+</style>
+
+<script>
+    $(function() {
+        var count = $('#rank-list li').length;
+        var height = $('#rank-list li').height();
+
+        function step(index) {
+            $('#rank-list ol').delay(2000).animate({
+                top: -height * index,
+            }, 500, function() {
+                step((index + 1) % count);
+            });
+        }
+
+        step(1);
+    });
+</script>
+
+</html>
